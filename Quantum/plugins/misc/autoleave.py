@@ -6,40 +6,38 @@ import config
 from Quantum import app
 from Quantum.misc import db
 from Quantum.core.call import Aviax, autoend, counter
-from Quantum.utils.database import get_client, set_loop, is_active_chat, is_autoend, is_autoleave
+from Quantum.utils.database import get_client, set_loop, is_active_chat, is_autoend
 import logging
 
 async def auto_leave():
-    while not await asyncio.sleep(900):
-        from Quantum.core.userbot import assistants
-        ender = await is_autoleave()
-        if not ender:
-            continue
-        for num in assistants:
-            client = await get_client(num)
-            left = 0
-            try:
-                async for i in client.get_dialogs():
-                    if i.chat.type in [
-                        ChatType.SUPERGROUP,
-                        ChatType.GROUP,
-                        ChatType.CHANNEL,
-                    ]:
-                        if (
-                            i.chat.id != config.LOGGER_ID
-                            and i.chat.id != -1002016928980 and i.chat.id != -1002200386150 and i.chat.id != -1001397779415
-                        ):
-                            if left == 20:
-                                continue
-                            if not await is_active_chat(i.chat.id):
-                                try:
-                                    await client.leave_chat(i.chat.id)
-                                    left += 1
-                                except Exception as e:
-                                    logging.error(f"Error leaving chat {i.chat.id}: {e}")
+    if config.AUTO_LEAVING_ASSISTANT:
+        while not await asyncio.sleep(900):
+            from Quantum.core.userbot import assistants
+
+            for num in assistants:
+                client = await get_client(num)
+                left = 0
+                try:
+                    async for i in client.get_dialogs():
+                        if i.chat.type in [
+                            ChatType.SUPERGROUP,
+                            ChatType.GROUP,
+                            ChatType.CHANNEL,
+                        ]:
+                            if (
+                                i.chat.id != config.LOGGER_ID
+                            ):
+                                if left == 20:
                                     continue
-            except Exception as e:
-                logging.error(f"Error processing dialogs: {e}")
+                                if not await is_active_chat(i.chat.id):
+                                    try:
+                                        await client.leave_chat(i.chat.id)
+                                        left += 1
+                                    except:
+                                        continue
+                except:
+                    pass
+
 
 asyncio.create_task(auto_leave())
                     
