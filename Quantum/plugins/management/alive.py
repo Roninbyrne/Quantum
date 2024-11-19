@@ -8,7 +8,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram.enums import ParseMode
 
 from Quantum.utils.database import get_served_chats, get_served_users, add_served_user
-from config import SUPPORT_CHAT, OWNER_ID,START_IMG_URL
+from config import SUPPORT_GROUP, OWNER_ID,START_IMG_URL
 
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
@@ -50,7 +50,7 @@ async def restart(client, m: Message):
     btn = [
         [
             InlineKeyboardButton(text="ɴᴏᴏʙ", user_id=OWNER_ID),
-            InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
+            InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_GROUP}"),
         ],
         [
             InlineKeyboardButton(

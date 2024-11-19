@@ -4,7 +4,7 @@ from typing import Union
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from config import OWNER_ID as owner_id, SUPPORT_CHAT as log, START_IMG_URL
+from config import OWNER_ID as owner_id, SUPPORT_GROUP as log, START_IMG_URL
 
 from Quantum import app as Client
 from Quantum.utils.errors import capture_err
