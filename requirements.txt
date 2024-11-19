@@ -26,7 +26,6 @@ pillow==9.5.0
 pydub
 pyfiglet
 pykeyboard
-pyrogram==2.0.106
 pySmartDL
 pyshorteners
 python-dotenv
