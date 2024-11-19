@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from Quantum import app
-from Quantum.core.call import QuantX
+from Quantum.core.call import Aviax
 from Quantum.utils import bot_sys_stats
 from Quantum.utils.decorators.language import language
 from Quantum.utils.inline import supp_markup
@@ -19,7 +19,7 @@ async def ping_com(client, message: Message, _):
         photo=PING_IMG_URL,
         caption=_["ping_1"].format(app.mention),
     )
-    pytgping = await QuantX.ping()
+    pytgping = await Aviax.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     await response.edit_text(

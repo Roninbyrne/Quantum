@@ -1,14 +1,14 @@
-<h1 align="center">🎵 QuantX Music Bot 🎵</h1>
+<h1 align="center">🎵 Aviax Music Bot 🎵</h1>
 
 <p align="center">
-  <img src="https://telegra.ph/file/29808c1fd50add3b1bfc6.jpg" alt="QuantX Music Logo" width="600" height="150">
+  <img src="https://telegra.ph/file/29808c1fd50add3b1bfc6.jpg" alt="Aviax Music Logo" width="600" height="150">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/TeamQuantX/Quantum?style=for-the-badge&color=blue" alt="GitHub stars">
-  <img src="https://img.shields.io/github/forks/TeamQuantX/Quantum?style=for-the-badge&color=blue" alt="GitHub forks">
-  <img src="https://img.shields.io/github/issues/TeamQuantX/Quantum?style=for-the-badge&color=red" alt="GitHub issues">
-  <img src="https://img.shields.io/github/license/TeamQuantX/Quantum?style=for-the-badge&color=green" alt="GitHub license">
+  <img src="https://img.shields.io/github/stars/TeamAviax/Quantum?style=for-the-badge&color=blue" alt="GitHub stars">
+  <img src="https://img.shields.io/github/forks/TeamAviax/Quantum?style=for-the-badge&color=blue" alt="GitHub forks">
+  <img src="https://img.shields.io/github/issues/TeamAviax/Quantum?style=for-the-badge&color=red" alt="GitHub issues">
+  <img src="https://img.shields.io/github/license/TeamAviax/Quantum?style=for-the-badge&color=green" alt="GitHub license">
 </p>
 
 <h2 align="center">Delivering Superior Music Experience to Telegram</h2>
@@ -99,7 +99,7 @@ This process will allow you to bypass the YouTube restrictions and ensure smooth
 
 ### 🛠 Commands & Usage
 
-The QuantX Music Bot offers a range of commands to enhance your music listening experience on Telegram:
+The Aviax Music Bot offers a range of commands to enhance your music listening experience on Telegram:
 
 | Command             | Description                             |
 | ------------------- | --------------------------------------- |
@@ -110,13 +110,13 @@ The QuantX Music Bot offers a range of commands to enhance your music listening 
 | `/stop`             | Stop the bot and clear the queue.       |
 | `/queue`            | Display the list of songs in the queue. |
 
-For a full list of commands, use `/help` in [telegram](https://t.me/QuantXBeatzBot).
+For a full list of commands, use `/help` in [telegram](https://t.me/AviaxBeatzBot).
 
 ---
 
 ### 🔄 Updates & Support
 
-Stay updated with the latest features and improvements to QuantX Music Bot:
+Stay updated with the latest features and improvements to Aviax Music Bot:
 
 <p align="center">
   <a href="https://telegram.me/the_support_chat">
@@ -131,7 +131,7 @@ Stay updated with the latest features and improvements to QuantX Music Bot:
 
 ### 🤝 Contributing
 
-We welcome contributions to the QuantX Music Bot project. If you'd like to contribute, please follow these steps:
+We welcome contributions to the Aviax Music Bot project. If you'd like to contribute, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch with a meaningful name.
@@ -151,7 +151,7 @@ This project is licensed under the MIT License. For more details, see the [LICEN
 
 ### 🙏 Acknowledgements
 
-Thanks to all the contributors, supporters, and users of the QuantX Music Bot. Your feedback and support keep us going!
+Thanks to all the contributors, supporters, and users of the Aviax Music Bot. Your feedback and support keep us going!
 
 - [Yukki Music](https://github.com/TeamYukki/YukkiMusicBot) and [AnonXMusic](https://github.com/AnonymousX1025/AnonXMusic) For their Source Codes.
 - **Special Thanks** to [SPiDER 🇮🇳](https://github.com/Surendra9123) for invaluable assistance in resolving the IP ban issue.

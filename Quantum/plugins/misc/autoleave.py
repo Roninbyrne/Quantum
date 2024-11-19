@@ -5,7 +5,7 @@ from pytgcalls.exceptions import GroupCallNotFound
 import config
 from Quantum import app
 from Quantum.misc import db
-from Quantum.core.call import QuantX, autoend, counter
+from Quantum.core.call import Aviax, autoend, counter
 from Quantum.utils.database import get_client, set_loop, is_active_chat, is_autoend, is_autoleave
 import logging
 
@@ -56,7 +56,7 @@ async def auto_end():
             nocall = False
             for chat_id in chatss:
                 try:
-                    users = len(await QuantX.call_listeners(chat_id))
+                    users = len(await Aviax.call_listeners(chat_id))
                 except GroupCallNotFound:
                     users = 1
                     nocall = True
@@ -71,7 +71,7 @@ async def auto_end():
                     except Exception:
                         pass
                     try:
-                        await QuantX.stop_stream(chat_id)
+                        await Aviax.stop_stream(chat_id)
                     except Exception:
                         pass
                     try:

@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from Quantum import app
-from Quantum.core.call import QuantX
+from Quantum.core.call import Aviax
 from Quantum.misc import SUDOERS, db
 from Quantum.utils import AdminRightsCheck
 from Quantum.utils.database import is_active_chat, is_nonadmin_chat
@@ -94,7 +94,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         text=_["admin_32"].format(CallbackQuery.from_user.mention),
     )
     try:
-        await QuantX.speedup_stream(
+        await Aviax.speedup_stream(
             chat_id,
             file_path,
             speed,

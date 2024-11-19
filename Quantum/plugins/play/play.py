@@ -7,7 +7,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from Quantum import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from Quantum.core.call import QuantX
+from Quantum.core.call import Aviax
 from Quantum.utils import seconds_to_min, time_to_seconds
 from Quantum.utils.channelplay import get_channeplayCB
 from Quantum.utils.decorators.language import languageCB
@@ -291,7 +291,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await QuantX.stream_call(url)
+                await Aviax.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(_["black_9"])
                 return await app.send_message(
@@ -519,7 +519,7 @@ async def anonymous_check(client, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("QuantXPlaylists") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("AviaxPlaylists") & ~BANNED_USERS)
 @languageCB
 async def play_playlists_command(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()

@@ -1,4 +1,4 @@
-from Quantum.core.bot import QuantX
+from Quantum.core.bot import Aviax
 from Quantum.core.dir import dirr
 
 from Quantum.core.userbot import Userbot
@@ -10,7 +10,7 @@ dirr()
 dbb()
 heroku()
 
-app = QuantX()
+app = Aviax()
 userbot = Userbot()
 
 

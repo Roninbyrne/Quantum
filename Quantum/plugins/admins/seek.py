@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from Quantum import YouTube, app
-from Quantum.core.call import QuantX
+from Quantum.core.call import Aviax
 from Quantum.misc import db
 from Quantum.utils import AdminRightsCheck, seconds_to_min
 from Quantum.utils.inline import close_markup
@@ -56,7 +56,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
     if "index_" in file_path:
         file_path = playing[0]["vidid"]
     try:
-        await QuantX.seek_stream(
+        await Aviax.seek_stream(
             chat_id,
             file_path,
             seconds_to_min(to_seek),
