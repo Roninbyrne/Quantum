@@ -12,6 +12,7 @@ filtersdb = mongodb.filters
 warnsdb = mongodb.warns
 karmadb = mongodb.karma
 authuserdb = mongodb.authuser
+autoleavedb = mongodb.autoleave
 autoenddb = mongodb.autoend
 assdb = mongodb.assistants
 blacklist_chatdb = mongodb.blacklistChat
@@ -374,6 +375,22 @@ async def get_lang(chat_id: int) -> str:
         return lang["lang"]
     return mode
 
+async def is_autoleave() -> bool:
+    chat_id = 1234
+    user = await autoleavedb.find_one({"chat_id": chat_id})
+    if not user:
+        return False
+    return True
+
+
+async def autoleave_on():
+    chat_id = 1234
+    await autoleavedb.insert_one({"chat_id": chat_id})
+
+
+async def autoleave_off():
+    chat_id = 1234
+    await autoleavedb.delete_one({"chat_id": chat_id})
 
 async def set_lang(chat_id: int, lang: str):
     langm[chat_id] = lang
