@@ -15,7 +15,7 @@ from pyrogram.types import (
     Message,
 )
 
-from Quantum import app,BOT_TOKEN
+from Quantum import app
 from Quantum.misc import SUDOERS
 from Quantum.utils.errors import capture_err
 from Quantum.utils.keyboard import ikb
@@ -31,7 +31,7 @@ from Quantum.utils.functions import (
     extract_user_and_reason,
     time_converter,
 )
-
+from config import BOT_TOKEN
 __mod_name__ = "Admin"
 __help__ = """/ban - Ban A User
 /dban - Delete the replied message banning its sender
