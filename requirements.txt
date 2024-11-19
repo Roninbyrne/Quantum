@@ -42,6 +42,7 @@ textblob
 tgcrypto
 telegraph
 unidecode
+uvloop
 wikipedia
 wget
 yt-dlp
