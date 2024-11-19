@@ -15,7 +15,7 @@ from pyrogram.types import (
     Message,
 )
 
-from Quantum import app
+from Quantum import app,BOT_TOKEN
 from Quantum.misc import SUDOERS
 from Quantum.utils.errors import capture_err
 from Quantum.utils.keyboard import ikb
@@ -85,9 +85,9 @@ async def member_permissions(chat_id: int, user_id: int):
         perms.append("can_manage_video_chats")
     return perms
 
-async def botID():
-    bot = await app.get_me()
-    return bot.id
+def botID():
+    bot = BOT_TOKEN.split(":")[0]
+    return bot
 
 from Quantum.utils.decorators.permissions import adminsOnly
 
