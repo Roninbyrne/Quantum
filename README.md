@@ -1,8 +1,5 @@
-<h1 align="center">🎵 Aviax Music Bot 🎵</h1>
+<h1 align="center"> Quantum Music Bot 🎵</h1>
 
-<p align="center">
-  <img src="https://telegra.ph/file/29808c1fd50add3b1bfc6.jpg" alt="Aviax Music Logo" width="600" height="150">
-</p>
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/TeamAviax/Quantum?style=for-the-badge&color=blue" alt="GitHub stars">
@@ -13,21 +10,6 @@
 
 <h2 align="center">Delivering Superior Music Experience to Telegram</h2>
 
----
-
-### 🛠 Fix for YouTube Blocking VPS IPs
-
-Due to YouTube blocking VPS IPs drastically, we have implemented a fix. Follow the steps below:
-
-1. **Join our Support Group**: Type `#script` in our [support group](https://t.me/the_support_chat) to get the necessary script.
-2. **Run the Script**: Run the downloaded script on your Windows Desktop Through VS Code or any other Software to generate cookies.
-3. **Fork the Repository**: Fork this repository to your GitHub account.
-4. **Add Cookies**: Paste the generated cookies into the `cookies` folder in your forked repository.
-5. **Deploy the Bot**: Continue with the setup instructions as outlined above.
-
-This process will allow you to bypass the YouTube restrictions and ensure smooth operation of the bot.
-
----
 
 ### 🌟 Features
 
@@ -42,7 +24,7 @@ This process will allow you to bypass the YouTube restrictions and ensure smooth
 
 ## 🚀 Deploy on Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/CyberPixelPro/Quantum)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/noob-mukesh/Quantum2)
 
 ---
 
@@ -68,7 +50,7 @@ This process will allow you to bypass the YouTube restrictions and ensure smooth
    ```
 5. **Clone the Repository**
    ```bash
-   git clone https://github.com/CyberPixelPro/Quantum && cd Quantum
+   git clone https://github.com/noob-mukesh/Quantum2 && cd Quantum2
    ```
 6. **Install Requirements**
    ```bash
@@ -110,7 +92,6 @@ The Aviax Music Bot offers a range of commands to enhance your music listening e
 | `/stop`             | Stop the bot and clear the queue.       |
 | `/queue`            | Display the list of songs in the queue. |
 
-For a full list of commands, use `/help` in [telegram](https://t.me/AviaxBeatzBot).
 
 ---
 
