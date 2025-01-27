@@ -1,8 +1,11 @@
 import time
+import asyncio
 from pyrogram import filters
 from pyrogram.types import Message
 from Mikasa import app
 from Mikasa.database import add_afk, is_afk, remove_afk
+
+lock = asyncio.Lock()
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -46,7 +49,7 @@ async def active_afk(_, message: Message):
                     f"{message.from_user.first_name} ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}",
                     disable_web_page_preview=True,
                 )
-            if afktype == "text_reason":
+            elif afktype == "text_reason":
                 await message.reply_text(
                     f"{message.from_user.first_name} ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\nRᴇᴀsᴏɴ: `{reasonafk}`",
                     disable_web_page_preview=True,
@@ -91,9 +94,7 @@ async def active_afk(_, message: Message):
             "reason": _reason,
         }
     elif len(message.command) == 1 and message.reply_to_message.photo:
-        await app.download_media(
-            message.reply_to_message, file_name=f"{user_id}.jpg"
-        )
+        await download_media_with_timeout(message.reply_to_message)
         details = {
             "type": "photo",
             "time": time.time(),
@@ -101,9 +102,7 @@ async def active_afk(_, message: Message):
             "reason": None,
         }
     elif len(message.command) > 1 and message.reply_to_message.photo:
-        await app.download_media(
-            message.reply_to_message, file_name=f"{user_id}.jpg"
-        )
+        await download_media_with_timeout(message.reply_to_message)
         _reason = message.text.split(None, 1)[1].strip()
         details = {
             "type": "photo",
@@ -120,9 +119,7 @@ async def active_afk(_, message: Message):
                 "reason": None,
             }
         else:
-            await app.download_media(
-                message.reply_to_message, file_name=f"{user_id}.jpg"
-            )
+            await download_media_with_timeout(message.reply_to_message)
             details = {
                 "type": "photo",
                 "time": time.time(),
@@ -139,9 +136,7 @@ async def active_afk(_, message: Message):
                 "reason": _reason,
             }
         else:
-            await app.download_media(
-                message.reply_to_message, file_name=f"{user_id}.jpg"
-            )
+            await download_media_with_timeout(message.reply_to_message)
             details = {
                 "type": "photo",
                 "time": time.time(),
@@ -160,6 +155,12 @@ async def active_afk(_, message: Message):
     await message.reply_text(
         f"{message.from_user.first_name} ɪs ɴᴏᴡ ᴀғᴋ.!"
     )
+
+async def download_media_with_timeout(message):
+    try:
+        await asyncio.wait_for(app.download_media(message), timeout=10)
+    except asyncio.TimeoutError:
+        await message.reply_text("Media download timed out. Please try again.")
 
 @app.on_message(filters.all)
 async def afk_check_message(_, message: Message):
@@ -195,6 +196,9 @@ async def afk_reply_check(_, message: Message):
 async def afk_mention_check(_, message: Message):
     if message.sender_chat:
         return
+    if message.from_user.id == app.me.id:
+        return
+
     mentioned_users = message.entities
     if mentioned_users:
         for entity in mentioned_users:
